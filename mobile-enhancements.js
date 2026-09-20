@@ -2,12 +2,17 @@
   const frame=document.getElementById('appFrame');
   if(!frame) return;
 
+  const outerStyle=document.createElement('style');
+  outerStyle.textContent='html,body,#appFrame{height:100dvh!important;min-height:100dvh!important}body{overscroll-behavior:none}';
+  document.head.appendChild(outerStyle);
+
   const MOBILE_CSS=`
   :root{--mobile-nav-h:76px}
   @media (max-width:780px){
     html,body{width:100%;max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
     body{padding:0!important}
     .login{min-height:100dvh!important;height:auto!important;display:block!important;background:#fff!important}
+    .login.hidden{display:none!important}
     .login-hero{display:none!important}
     .login-panel{min-height:100dvh!important;height:auto!important;padding:24px 18px calc(24px + env(safe-area-inset-bottom))!important;align-items:center!important}
     .login-box{width:100%!important;max-width:440px!important;margin:auto!important}
