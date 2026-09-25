@@ -2,7 +2,7 @@
   const loadOrangeWhiteTheme=()=>{
     if(document.querySelector('script[data-ayvo-orange-white]'))return;
     const visual=document.createElement('script');
-    visual.src='orange-white-theme.js?v=20260925c';
+    visual.src='orange-white-theme.js?v=20260925d';
     visual.dataset.ayvoOrangeWhite='1';
     document.head.appendChild(visual);
   };
@@ -38,10 +38,10 @@
   };
 
   const core=document.createElement('script');
-  core.src='mobile-enhancements-core.js';
+  core.src='mobile-enhancements-core.js?v=20260925d';
   core.onload=()=>{
     const fix=document.createElement('script');
-    fix.src='nav-hotfix.js';
+    fix.src='nav-hotfix.js?v=20260925d';
     fix.onload=loadCommercialSuite;
     fix.onerror=loadCommercialSuite;
     document.head.appendChild(fix);
