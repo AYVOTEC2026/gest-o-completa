@@ -1,15 +1,27 @@
 (function(){
+  const loadParkOperations=()=>{
+    if(document.querySelector('script[data-ayvo-park-ops]'))return;
+    const ops=document.createElement('script');
+    ops.src='park-operations.js?v=20260925a';
+    ops.dataset.ayvoParkOps='1';
+    document.head.appendChild(ops);
+  };
+
   const loadCommercialSuite=()=>{
     const theme=document.createElement('script');
     theme.src='commercial-theme.js?v=20260921c';
     theme.onload=()=>{
       const polish=document.createElement('script');
       polish.src='commercial-polish.js?v=20260921c';
+      polish.onload=loadParkOperations;
+      polish.onerror=loadParkOperations;
       document.head.appendChild(polish);
     };
     theme.onerror=()=>{
       const polish=document.createElement('script');
       polish.src='commercial-polish.js?v=20260921c';
+      polish.onload=loadParkOperations;
+      polish.onerror=loadParkOperations;
       document.head.appendChild(polish);
     };
     document.head.appendChild(theme);
