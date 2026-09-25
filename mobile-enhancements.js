@@ -2,7 +2,7 @@
   const loadOrangeWhiteTheme=()=>{
     if(document.querySelector('script[data-ayvo-orange-white]'))return;
     const visual=document.createElement('script');
-    visual.src='orange-white-theme.js?v=20260925b';
+    visual.src='orange-white-theme.js?v=20260925c';
     visual.dataset.ayvoOrangeWhite='1';
     document.head.appendChild(visual);
   };
