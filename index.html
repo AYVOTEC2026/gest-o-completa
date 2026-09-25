@@ -7,11 +7,14 @@
 <meta name="theme-color" content="#f28c18">
 <style>
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#fff8f1}
-iframe{border:0;width:100%;height:100%;display:block;background:#fff8f1}
+body{position:relative}
+body:before{content:"";position:fixed;inset:0;background:linear-gradient(135deg,#fff8f1 0%,#fff 58%,#fff3e5 100%);z-index:0}
+#appFrame{position:relative;z-index:1;border:0;width:100%;height:100%;display:block;background:#fff8f1;opacity:0;visibility:hidden;transition:opacity .18s ease}
+#appFrame.ayvo-ready{opacity:1;visibility:visible}
 </style>
 </head>
 <body>
-<iframe id="appFrame" src="original.html?v=20260925c" title="AYVO Gestão"></iframe>
-<script src="mobile-enhancements.js?v=20260925c"></script>
+<iframe id="appFrame" src="original.html?v=20260925d" title="AYVO Gestão"></iframe>
+<script src="mobile-enhancements.js?v=20260925d"></script>
 </body>
 </html>
