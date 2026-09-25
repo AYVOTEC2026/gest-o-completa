@@ -1,9 +1,19 @@
 (function(){
+  const loadOrangeWhiteTheme=()=>{
+    if(document.querySelector('script[data-ayvo-orange-white]'))return;
+    const visual=document.createElement('script');
+    visual.src='orange-white-theme.js?v=20260925b';
+    visual.dataset.ayvoOrangeWhite='1';
+    document.head.appendChild(visual);
+  };
+
   const loadParkOperations=()=>{
-    if(document.querySelector('script[data-ayvo-park-ops]'))return;
+    if(document.querySelector('script[data-ayvo-park-ops]')){loadOrangeWhiteTheme();return;}
     const ops=document.createElement('script');
     ops.src='park-operations.js?v=20260925a';
     ops.dataset.ayvoParkOps='1';
+    ops.onload=loadOrangeWhiteTheme;
+    ops.onerror=loadOrangeWhiteTheme;
     document.head.appendChild(ops);
   };
 
